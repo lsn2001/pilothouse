@@ -1,4 +1,5 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     "target": "esnext",
     "useDefineForClassFields": true,
@@ -10,28 +11,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ]
+    "composite": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "paths": {
-    "@/*": [
-      "src/*"
-    ],
-    "@lib/*": [
-      "lib/*"
-    ],
-  },
+  "baseUrl": ".",
+  "@/*": ["src/*"],
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
+    "src/**/*.vue",
+    "vite.config.ts"
   ]
 }

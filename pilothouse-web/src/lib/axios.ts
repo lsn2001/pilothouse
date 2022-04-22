@@ -1,9 +1,9 @@
-import axios, { AxiosRequestConfig, AxiosInstance } from 'axios';
-import { busiError, sysError } from './axiosInterceptors/response';
+import axios, { AxiosRequestConfig, AxiosInstance } from "axios";
+import { busiError, sysError } from "./axiosInterceptors/response";
 
 let config = {
-    timeout: 35 * 1000, // Timeout
-    baseUrL: '/api'
+  timeout: 35 * 1000, // Timeout
+  baseUrL: "/api",
 };
 
 let axiosInstance = axios.create(config);
