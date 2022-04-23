@@ -13,4 +13,5 @@ export default {
   security: {
     csrf: false,
   },
+  globalPrefix: '/api',
 } as MidwayConfig & DefaultConfig;

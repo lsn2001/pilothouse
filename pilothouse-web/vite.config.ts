@@ -1,25 +1,18 @@
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import Unocss from 'unocss/vite'
-import { presetUno, presetAttributify, presetIcons } from 'unocss'
-import path from "path";
+/// <reference types="vitest" />
 
-// https://vitejs.dev/config/
+import path from 'path'
+import { defineConfig } from 'vite'
+import Vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Unocss from 'unocss/vite'
+
 export default defineConfig({
-  plugins: [
-    vue(),
-    // Unocss({
-    //   presets: [
-    //     presetUno(),
-    //     presetAttributify(),
-    //     presetIcons()],
-    // })
-    ,],
   server: {
     port: 5000,
     proxy: {
       "/api": {
-        target: "http://127.0.0.1:5001/",
+        target: "http://127.0.0.1:5001",
         changeOrigin: true,
         configure: (proxy, options) => {
           // proxy 是 'http-proxy' 的实例
@@ -30,14 +23,38 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+      'common/': `${path.resolve(__dirname, '../common')}/`,
     },
   },
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: '@import "@/assets/style/mian.scss";'
-  //     }
-  //   }
-  // }
-});
+  plugins: [
+    Vue({
+      reactivityTransform: true,
+    }),
+
+    // https://github.com/antfu/unplugin-auto-import
+    AutoImport({
+      imports: [
+        'vue',
+        'vue/macros',
+        'vue-router',
+        '@vueuse/core',
+      ],
+      dts: true,
+    }),
+
+    // https://github.com/antfu/vite-plugin-components
+    Components({
+      dts: true,
+    }),
+
+    // https://github.com/antfu/unocss
+    // see unocss.config.ts for config
+    Unocss(),
+  ],
+
+  // https://github.com/vitest-dev/vitest
+  test: {
+    environment: 'jsdom',
+  },
+})

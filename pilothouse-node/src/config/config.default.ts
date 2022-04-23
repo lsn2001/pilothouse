@@ -7,11 +7,8 @@ export default (appInfo: MidwayAppInfo) => {
     egg: {
       port: 5001,
     },
-    // cors: {
-    //   credentials: false,
-    // },
-    // security: {
-    //   csrf: false,
-    // },
+
+    // TODO 待解决 全局路由配置不上
+    //globalPrefix: '/api'
   } as MidwayConfig;
 };
