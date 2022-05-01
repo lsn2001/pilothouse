@@ -35,3 +35,11 @@
 - Q&A
 
 - css 文档 暂时参考 tailwindcss https://www.tailwindcss.cn/docs/padding
+- 可用图标库 https://icones.js.org/collection/carbon
+```html
+<div i-carbon-图标名称/>
+
+<!-- 例子 -->
+
+<div i-carbon-hurricane />
+```

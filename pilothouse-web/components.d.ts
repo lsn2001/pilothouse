@@ -4,8 +4,15 @@
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Calendar: typeof import('./src/components/Calendar.vue')['default']
     Counter: typeof import('./src/components/Counter.vue')['default']
+    DarkBottom: typeof import('./src/components/DarkBottom.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    Menu: typeof import('./src/components/Menu.vue')['default']
+    NButton: typeof import('naive-ui')['NButton']
+    NCalendar: typeof import('naive-ui')['NCalendar']
+    NDivider: typeof import('naive-ui')['NDivider']
+    NMenu: typeof import('naive-ui')['NMenu']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
