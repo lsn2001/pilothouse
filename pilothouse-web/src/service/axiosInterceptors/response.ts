@@ -12,6 +12,7 @@ export const interceptorsOnFulfilled = (response: AxiosResponse) => {
     }
 }
 
+
 export const interceptorsonRejected = (error: any) => {
     if (error.response.status) {
         switch (error.response.status) {
