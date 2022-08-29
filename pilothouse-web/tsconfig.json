@@ -5,6 +5,8 @@
     "target": "es2016",
     "lib": ["DOM", "ESNext"],
     "strict": true,
+    "preserveValueImports": true,
+    "isolatedModules": true,
     "jsx": "preserve",
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -13,7 +15,7 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "vite-plugin-pages/client"],
+    "types": ["vite/client"],
     "paths": {
       "~/*": ["src/*"],
       "common/*": ["../common/*"]

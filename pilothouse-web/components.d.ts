@@ -9,6 +9,8 @@ declare module '@vue/runtime-core' {
     DarkBottom: typeof import('./src/components/DarkBottom.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']
+    NButton: typeof import('naive-ui')['NButton']
+    NCalendar: typeof import('naive-ui')['NCalendar']
     NDivider: typeof import('naive-ui')['NDivider']
     NMenu: typeof import('naive-ui')['NMenu']
     RouterLink: typeof import('vue-router')['RouterLink']
