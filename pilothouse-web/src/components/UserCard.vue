@@ -30,30 +30,30 @@ const cardList: any = [
 
 </script>
 <template>
-    <div class="UserCard">
+    <div class="UserCard bg-black w-1668px">
         <div class='container'>
-            <div class='card-list'>
-                <div class="list">
-                    <div class="item opacity-90 hover:scale-110 hover:opacity-100 transition duration-150 " :class="item.bgcolor" v-for="(item,j) in cardList" :key="j">
-                        <div class="item-logo">
+            <div class='card-list w-1650px flex justify-center items-center'>
+                <div class="list m-20px flex justify-center items-center">
+                    <div class="item opacity-90 hover:scale-110 hover:opacity-100 transition duration-150 mx-20px w-380px h-470px text-center rounded-20px" :class="item.bgcolor" v-for="(item,j) in cardList" :key="j">
+                        <div class="item-logo w-full h-40px flex justify-between items-center">
                             <div class="icon">
-                                <img class='info-icon' :src="item.icon" alt="">
+                                <img class='info-icon w-30px h-30px ml-20px mt-20px' :src="item.icon" alt="">
                             </div>
-                            <div class="share-icon">
-                                <a class="share opacity-30 hover:opacity-100 hover:scale-120 transition duration-150" href="javascript:;"></a>
-                                <a class="bluebird opacity-30 hover:opacity-100 hover:scale-120 transition duration-150" href="javascript:;"></a>
-                                <a class="github opacity-30 hover:opacity-100 hover:scale-120 transition duration-150" href="javascript:;"></a>
+                            <div class="share-icon h-20px w-130px mr-10px mt-20px">
+                                <a class="share opacity-30 hover:opacity-100 hover:scale-120 transition duration-150 mr-4 inline-block w-25px h-25px opacity-50 bg-no-repeat bg-contain" style="background-image: url('https://api.iconify.design/carbon:share.svg');" href="javascript:;"></a>
+                                <a class="bluebird opacity-30 hover:opacity-100 hover:scale-120 transition duration-150 mr-4 inline-block w-25px h-25px opacity-50 bg-no-repeat bg-contain" style="background-image: url('./../imgs/bluebird.svg');" href="javascript:;"></a>
+                                <a class="github opacity-30 hover:opacity-100 hover:scale-120 transition duration-150 mr-4 inline-block w-25px h-25px opacity-50 bg-no-repeat bg-contain" style="background-image: url('./../imgs/github.svg');" href="javascript:;"></a>
                             </div>
                         </div>
-                        <div class="item-img">
+                        <div class="item-img my-30px">
                             <el-avatar shape="square" :size="164" :src="item.itemImage"></el-avatar>
                         </div>
                         <div class="item-info">
                             <span block text-2xl>{{item.name}}</span>
                             <span block>{{item.info}}</span>
                         </div>
-                        <div class="item-intro ">
-                            <span class="intro">{{item.intro}}</span>
+                        <div class="item-intro h-80px mt-30px mb-10px mx-10px flex justify-center items-center border-solid border black-200">
+                            <span class="intro inline-block mx-10px">{{item.intro}}</span>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ const cardList: any = [
 
 
 <style>
-.UserCard {
+/* .UserCard {
     width: 1668px;
     background: #000;
 }
@@ -84,9 +84,9 @@ const cardList: any = [
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
-.item {
+/* .item {
     margin: 0 20px;
     width: 380px;
     height: 470px;
@@ -94,33 +94,33 @@ const cardList: any = [
     border-radius: 20px;
     background-color: grey;
 
-}
+} */
 
-.info-icon {
+/* .info-icon {
     height: 30px;
     width: 30px;
     margin-left: 20px;
     margin-top: 20px;
-}
+} */
 
-.share-icon {
+/* .share-icon {
     height: 20px;
     width: 130px;
     margin-right: 10px;
     margin-top: 20px;
-}
+} */
 
-.item-logo {
+/* .item-logo {
     height: 40px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-a{
+} */
+/* a{
     margin-right: 15px;
-}
-.share {
+} */
+/* .share {
     display: inline-block;
     width: 25px;
     height: 25px;
@@ -162,5 +162,5 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 </style>
