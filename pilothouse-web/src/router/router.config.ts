@@ -53,4 +53,16 @@ export const Mainroutes: Array<RouteRecordRaw> = [
       },
     ],
   },
+  {
+    path: "/demoTestPlayground",
+    name: "DemoTestPlayground",
+    component: () => import("~/pages/Container.vue"),
+    children: [
+      {
+        path: "/demoTestPlayground/index",
+        name: "DemoTestPlayground",
+        component: () => import("~/pages/demoTestPlayground/index.vue"),
+      },
+    ],
+  },
 ];
