@@ -1,4 +1,6 @@
 <script setup lang="ts">
+
+
 const cardList: any = [
     {
         itemImage: './../imgs/1.png',
@@ -38,13 +40,13 @@ const cardList: any = [
                                 <img class='info-icon' :src="item.icon" alt="">
                             </div>
                             <div class="share-icon">
-                                <a class="share opacity-30 hover:opacity-100 hover:scale-120" href="javascript:;"></a>
-                                <a class="bluebird opacity-30 hover:opacity-100 hover:scale-120" href="javascript:;"></a>
-                                <a class="github opacity-30 hover:opacity-100 hover:scale-120" href="javascript:;"></a>
+                                <a class="share opacity-30 hover:opacity-100 hover:scale-120 transition duration-150" href="javascript:;"></a>
+                                <a class="bluebird opacity-30 hover:opacity-100 hover:scale-120 transition duration-150" href="javascript:;"></a>
+                                <a class="github opacity-30 hover:opacity-100 hover:scale-120 transition duration-150" href="javascript:;"></a>
                             </div>
                         </div>
                         <div class="item-img">
-                            <img :src="item.itemImage" alt="">
+                            <el-avatar shape="square" :size="164" :src="item.itemImage"></el-avatar>
                         </div>
                         <div class="item-info">
                             <span block text-2xl>{{item.name}}</span>
@@ -145,13 +147,6 @@ a{
 
 .item-img {
     margin: 30px 0;
-}
-
-img {
-    margin: 0 auto;
-    width: 164px;
-    height: 164px;
-
 }
 
 .intro {
