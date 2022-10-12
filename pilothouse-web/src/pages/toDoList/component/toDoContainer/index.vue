@@ -12,6 +12,7 @@
 </template>
 <script setup lang="ts">
 const inputValue = ref('')
+
 const todoList = reactive<string[]>([])
 const addTodo = () => {
     todoList.push(inputValue.value)
