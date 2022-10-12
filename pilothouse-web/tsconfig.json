@@ -15,7 +15,7 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client"],
+    "types": ["vite/client", "element-plus/global"],
     "paths": {
       "~/*": ["src/*"],
       "common/*": ["../common/*"]

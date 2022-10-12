@@ -1,12 +1,12 @@
 /// <reference types="vitest" />
 
-import path from 'path'
-import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import Unocss from 'unocss/vite'
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import path from "path";
+import { defineConfig } from "vite";
+import Vue from "@vitejs/plugin-vue";
+import Components from "unplugin-vue-components/vite";
+import AutoImport from "unplugin-auto-import/vite";
+import Unocss from "unocss/vite";
+import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 export default defineConfig({
   server: {
     port: 5000,
@@ -23,8 +23,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
-      'common/': `${path.resolve(__dirname, '../common')}/`,
+      "~/": `${path.resolve(__dirname, "src")}/`,
+      "common/": `${path.resolve(__dirname, "../common")}/`,
     },
   },
   plugins: [
@@ -34,20 +34,12 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: [
-        'vue',
-        'vue/macros',
-        'vue-router',
-        '@vueuse/core',
-      ],
+      imports: ["vue", "vue/macros", "vue-router", "@vueuse/core"],
       dts: true,
     }),
 
     // https://github.com/antfu/vite-plugin-components
-    Components({
-      dts: true,
-      resolvers: [NaiveUiResolver()]
-    }),
+    Components(),
 
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
@@ -56,6 +48,6 @@ export default defineConfig({
 
   // https://github.com/vitest-dev/vitest
   test: {
-    environment: 'jsdom',
+    environment: "jsdom",
   },
-})
+});
