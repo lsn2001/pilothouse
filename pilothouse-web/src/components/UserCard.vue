@@ -17,7 +17,7 @@ const props: any = defineProps({
     },
     logoNum: {
         type: String,
-        default: '012',
+        default: ['share','twitter','github'],
     }
 })
 
@@ -42,24 +42,24 @@ const LogoSelected = computed(() => {
 }) */
 
 enum Logo{
-    share = "0",
-    twitter = "1",
-    github = "2"
+    Share = "share",
+    Twitter = "twitter",
+    Github = "github"
 }
-const logoType: Array<string> = ['i-carbon:share', 'i-carbon:logo-twitter', 'i-carbon:logo-github']
+// const logoType: Array<string> = ['i-carbon:share', 'i-carbon:logo-twitter', 'i-carbon:logo-github']
 
 const LogoSelected = computed(() => {
     let arr1: Array<string> = []
     let arr2: Array<string> = [...props.logoNum]
     for (let i = 0; i < arr2.length;i++){
-        if (arr2[i] == Logo.share) {
-            arr1.push(logoType[Logo.share])
+        if (arr2[i] == Logo.Share) {
+            arr1.push(`i-carbon:${Logo.Share}`)
         }
-        else if (arr2[i] == Logo.twitter) {
-            arr1.push(logoType[Logo.twitter])
+        else if (arr2[i] == Logo.Twitter) {
+            arr1.push(`i-carbon:logo-${Logo.Twitter}`)
         }
-        else if (arr2[i] == Logo.github) {
-            arr1.push(logoType[Logo.github])
+        else if (arr2[i] == Logo.Github) {
+            arr1.push(`i-carbon:logo-${Logo.Github}`)
         }
     }
     return arr1
