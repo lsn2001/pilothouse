@@ -17,32 +17,54 @@ const props: any = defineProps({
     },
     logoNum: {
         type: String,
-        default: '123',
+        default: '012',
     }
 })
 
-const logoType: Array<string> = ['i-carbon:share', 'i-carbon:logo-twitter', 'i-carbon:logo-github']
-const Logo = computed(() => {
+/* const logoType: Array<string> = ['i-carbon:share', 'i-carbon:logo-twitter', 'i-carbon:logo-github']
+const LogoSelected = computed(() => {
     let arr1: Array<number> = [...props.logoNum]
-        console.log(arr1)
     let arr2: Array<string> = []
     for (let i = 0; i < arr1.length; i++) {
-            
-        if (arr1[i] == 1) {
+
+        if (arr1[i] == 0) {
             arr2.push(logoType[0])
         }
-        if (arr1[i] == 2) {
+        else if (arr1[i] == 1) {
             arr2.push(logoType[1])
         }
-        if (arr1[i] == 3) {
+        else if (arr1[i] == 2) {
             arr2.push(logoType[2])
         }
 
     }
     return arr2
+}) */
+
+enum Logo{
+    share = "0",
+    twitter = "1",
+    github = "2"
+}
+const logoType: Array<string> = ['i-carbon:share', 'i-carbon:logo-twitter', 'i-carbon:logo-github']
+
+const LogoSelected = computed(() => {
+    let arr1: Array<string> = []
+    let arr2: Array<string> = [...props.logoNum]
+    for (let i = 0; i < arr2.length;i++){
+        if (arr2[i] == Logo.share) {
+            arr1.push(logoType[Logo.share])
+        }
+        else if (arr2[i] == Logo.twitter) {
+            arr1.push(logoType[Logo.twitter])
+        }
+        else if (arr2[i] == Logo.github) {
+            arr1.push(logoType[Logo.github])
+        }
+    }
+    return arr1
+
 })
-
-
 
 </script>
 <template>
@@ -55,7 +77,7 @@ const Logo = computed(() => {
                         <slot name="icon"></slot>
                         <div h-20px w-130px mr-10px mt-20px>
                             <a opacity-30 hover:opacity-100 hover:scale-120 transition duration-150 mr-4 inline-block
-                                w-25px h-25px opacity-50 bg-no-repeat bg-contain v-for="(item,j) in Logo" :key="j"
+                                w-25px h-25px opacity-50 bg-no-repeat bg-contain v-for="(item,j) in LogoSelected" :key="j"
                                 :class=item href="javascript:;"></a>
                         </div>
                     </div>
