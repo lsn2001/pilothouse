@@ -1,6 +1,6 @@
 <template>
     <div w-full flex justify-center items-center>
-        <UserCard v-for="(item,i) in cardList" :key="i" :avatar="item.avatar" :name="item.name" :bgcolor="item.bgcolor" :arr="item.arr">
+        <UserCard v-for="(item,i) in cardList" :key="i" :logoNum="item.logoNum" :avatar="item.avatar" :name="item.name" :bgcolor="item.bgcolor" >
             <template v-slot:icon>
                 <img w-30px h-30px ml-20px mt-20px :src="item.icon" alt="" />
             </template>
@@ -10,8 +10,7 @@
             <template v-slot:intro>
                 <span inline-block mx-10px>{{item.intro}}</span>
             </template>
-        </UserCard>
-        
+        </UserCard> 
     </div>
 </template>
 <script setup lang="ts">
@@ -24,7 +23,7 @@ const cardList: any = reactive([
         intro: 'Histoire Deep Dive',
         icon: './../imgs/icon1.svg',
         bgcolor: 'bg-gradient-to-b from-green-300 via-green-400 to-green-500',
-        logoNum:'12',
+        logoNum:'121',
     },
     {
         avatar: './../imgs/2.png',
@@ -33,7 +32,7 @@ const cardList: any = reactive([
         intro: 'introducing Ladle:Develop and test your React stories faster',
         icon: './../imgs/icon2.svg',
         bgcolor: 'bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500',
-        logoNum:'13',
+        logoNum:'123',
     },
     {
         avatar: './../imgs/3.png',

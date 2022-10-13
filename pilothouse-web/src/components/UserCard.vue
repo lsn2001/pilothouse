@@ -17,15 +17,17 @@ const props: any = defineProps({
     },
     logoNum: {
         type: String,
-        default: 'all',
+        default: '123',
     }
 })
 
 const logoType: Array<string> = ['i-carbon:share', 'i-carbon:logo-twitter', 'i-carbon:logo-github']
 const Logo = computed(() => {
     let arr1: Array<number> = [...props.logoNum]
+        console.log(arr1)
     let arr2: Array<string> = []
     for (let i = 0; i < arr1.length; i++) {
+            
         if (arr1[i] == 1) {
             arr2.push(logoType[0])
         }
