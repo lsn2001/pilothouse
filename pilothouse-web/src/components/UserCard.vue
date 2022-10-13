@@ -16,7 +16,7 @@ const props: any = defineProps({
         required: true
     },
     logoNum: {
-        type: String,
+        type: Array,
         default: ['share','twitter','github'],
     }
 })
