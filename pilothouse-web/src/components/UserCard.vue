@@ -15,7 +15,7 @@ const props: any = defineProps({
         default: 'white',
         required: true
     },
-    logoNum: {
+    logoArr: {
         type: Array,
         default: ['share','twitter','github'],
     }
@@ -50,7 +50,7 @@ enum Logo{
 
 const LogoSelected = computed(() => {
     let arr1: Array<string> = []
-    let arr2: Array<string> = [...props.logoNum]
+    let arr2: Array<string> = [...props.logoArr]
     for (let i = 0; i < arr2.length;i++){
         if (arr2[i] == Logo.Share) {
             arr1.push(`i-carbon:${Logo.Share}`)
