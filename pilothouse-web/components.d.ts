@@ -10,7 +10,7 @@ declare module '@vue/runtime-core' {
     Menu: typeof import('./src/components/Menu.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    UserCard: typeof import('./src/components/UserCard.vue')['default']
+    UserCard: typeof import('./src/components/UserCard/index.vue')['default']
   }
 }
 

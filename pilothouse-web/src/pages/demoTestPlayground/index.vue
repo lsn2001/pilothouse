@@ -14,7 +14,8 @@
     </div>
 </template>
 <script setup lang="ts">
-import UserCard from '~/components/UserCard.vue';
+import UserCard from '~/components/UserCard/index.vue';
+import { Elogo } from './../../components/UserCard/type/enum'
 const cardList: any = reactive([
     {
         avatar: './../imgs/1.png',
@@ -23,7 +24,7 @@ const cardList: any = reactive([
         intro: 'Histoire Deep Dive',
         icon: './../imgs/icon1.svg',
         bgcolor: 'bg-gradient-to-b from-green-300 via-green-400 to-green-500',
-        logoArr:['share','twitter','github'],
+        logoArr:[Elogo['share'],Elogo['twitter'],Elogo['github']],
     },
     {
         avatar: './../imgs/2.png',
@@ -32,7 +33,7 @@ const cardList: any = reactive([
         intro: 'introducing Ladle:Develop and test your React stories faster',
         icon: './../imgs/icon2.svg',
         bgcolor: 'bg-gradient-to-b from-blue-300 via-blue-400 to-blue-500',
-        logoArr:['share','twitter','github'],
+        logoArr:[Elogo['share'],Elogo['twitter'],Elogo['github']],
     },
     {
         avatar: './../imgs/3.png',
@@ -41,7 +42,7 @@ const cardList: any = reactive([
         intro: 'Developing,Documenting,and Testing your Vite app with Stroybook',
         icon: './../imgs/icon3.svg',
         bgcolor: 'bg-gradient-to-b from-red-300 via-red-400 to-red-500',
-        logoArr:['share','twitter','github'],
+        logoArr:[Elogo['share'],Elogo['twitter']],
     }
 ])
 </script>
