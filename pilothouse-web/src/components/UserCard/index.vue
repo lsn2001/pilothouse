@@ -1,16 +1,15 @@
 
 <template>
     <div bg-black w-1857px flex justify-center items-center>
-        
             <div mr-10px flex justify-center items-center>
                 <div opacity-90 hover:scale-110 hover:opacity-100 transition duration-150 mx-20px w-380px h-470px
                     text-center rounded-20px :class="props.bgcolor">
                     <div w-full h-40px flex justify-between items-center>
                         <slot name="icon"></slot>
                         <div h-20px w-130px mr-10px mt-20px >
-                            <a opacity-30 hover:opacity-100 hover:scale-120 transition duration-150 mr-4 inline-block
-                                w-25px h-25px opacity-50 bg-no-repeat bg-contain v-for="(item,j) in LogoSelected" :key="j"
-                                 v-bind:class=item href="javascript:;"></a>
+                            <a opacity-30 hover:opa city-100 hover:scale-120 transition duration-150 mr-4 inline-block
+                                w-25px h-25px opacity-50 bg-no-repeat bg-contain v-for="(item,index) in LogoSelected" :key="index"
+                                @click="openLink(item.link)" :class="item.logoIcon"></a>
                         </div>
                     </div>
                     <div my-30px>
@@ -28,18 +27,29 @@
     </div>
 </template>
 <script setup lang="ts">
-import { Elogo } from '~/components/UserCard/type/enum' // vite
 import {propsData} from '~/components/UserCard/props'
 // 因为defineProps必须要在setup函数里才可以 直接export+import的方法获得的props对象为null 解决方法:先在props.js定义参数对象，再由UserCard组件进行defineProps
 const props = defineProps(propsData)
 const LogoSelected = computed(() => {
     return props.logoArr.map((item) => {
-        if (item == "twitter" || item == "github")
-        {
-            return `i-carbon:logo-${Elogo[item]}`
-        }
-        else
-        return `i-carbon:${Elogo[item]}`
+        return item
     })
+    // return props.logoArr.map((item) => {
+    //     if (item == "twitter" || item == "github")
+    //     {
+    //         return `i-carbon-logo-${Elogo[item]}`
+    //     }
+    //     else
+    //     return `i-carbon-${Elogo[item]}`
+    // })
+    //return ['i-carbon-logo-twitter']
 })
+
+// 函数的形式定义a标签的href，安全性较好
+const openLink = (link:string) => {
+    const aList = document.getElementsByTagName('a');
+    for (let i = 0; i < aList.length; i++){
+        aList[i].href = link;
+    }
+}
 </script>
