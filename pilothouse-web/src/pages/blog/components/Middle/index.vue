@@ -1,26 +1,21 @@
 <template>
-    <div class="middle">
-        <div class="tournaments">
-            <svg width="1216" height="262" viewBox="0 0 1216 262" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="1216" height="262" rx="35" fill="#892CDC" />
-            </svg>
-
-            <p class="title">The only address for tournaments.</p>
+    <div class="middle w-2/3 flex bg-yellow-200 flex-col items-center text-white">
+        <div class="tournaments flex flex-col item-center w-4/5">
+            <div class="div1 w-full bg-green-600  transition duration-700 ease-in-out hover:bg-red-700 hover:scale-110 rounded-2xl my-12"><p class="title text-3xl my-8 mx-4 text-left w-2/5">The only address for tournaments.</p></div>      
         </div>
-
-        <div class="channel">
-            <p class="title">Live Channel</p>
-            <div class="channel-lists">
-                <img class="arrow" src="https://api.iconify.design/carbon:arrow-left.svg" alt="" srcset="">
-                <ul v-for="(item, index) in props.channelList" :key="index">
+        <div class="channel w-9/10">
+            <p class="title text-3xl text-left my-4">Live Channel</p>
+            <div class="channel-lists bg-purple-700 w-full rounded-full flex items-center justify-center">
+                <img class="arrow w-8 bg-white rounded-3xl mx-8" src="https://api.iconify.design/carbon:arrow-left.svg" alt="" srcset="">
+                <ul v-for="(item, index) in props.channelList" :key="index" class="my-8 w-1/5" >
                     <li><el-avatar :src="item.img" />
                         <p>{{ item.number }}</p>
                     </li>
                 </ul>
-                <img class="arrow" src="https://api.iconify.design/carbon:arrow-right.svg" alt="" srcset="">
+                <img class="arrow w-8 bg-white rounded-3xl mx-8" src="https://api.iconify.design/carbon:arrow-right.svg" alt="" srcset="">
             </div>
         </div>
-        <div class="recommend" v-for="(item, i) in cardList" :key="i" >
+        <div class="recommend w-9/10 flex justify-between my-4 " v-for="(item, i) in cardList" :key="i" >
             <Card v-for="(list,index) in item" :key="index" :bgcolor="list.bgcolor" :title="list.title"
                 :text="list.text">
                 <template v-slot:title>
@@ -35,7 +30,7 @@
 </template>
 <script setup lang="ts">
 import { type PropType } from 'vue';
-import Card from '~/pages/blog/Card.vue';
+import Card from '~/pages/blog/components/Card/index.vue';
 const props = defineProps({
     channelList: {
         type: Array as PropType<Array<any>>
@@ -66,73 +61,12 @@ const cardList: any = reactive([
 ])
 </script>
 <style>
-.middle {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #E6E6E6;
-    position: relative;
-}
 
-.title {
-    font-size: 28px;
-    font-weight: bold;
-}
 
-.middle .tournaments {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.middle svg {
-    width: 80%;
-}
 
-.middle .tournaments .title {
-    width: 40%;
-    text-align: start;
-    position: absolute;
-    left: 120px;
-    top: 90px;
-}
 
-.middle .channel {
-    width: 90%;
-}
 
-.middle .channel .title {
-    text-align: left;
-    margin: 20px 0;
-}
 
-.channel-lists {
-    background-color: #29043D;
-    width: 100%;
-    height: 100px;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #E6E6E6;
-}
 
-.channel-lists ul {
-    width: 17%;
-
-}
-
-.channel-lists .arrow {
-    width: 30px;
-    background-color: #E6E6E6;
-    border-radius: 30px;
-}
-
-.recommend {
-    width: 95%;
-    margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
-}
 </style>

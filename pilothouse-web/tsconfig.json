@@ -15,11 +15,12 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "element-plus/global"],
+    "types": ["vite/client", "element-plus/global","vite-svg-loader"],
     "paths": {
       "~/*": ["src/*"],
       "common/*": ["../common/*"]
-    }
+    },
+    
   },
   "exclude": ["dist", "node_modules"]
 }

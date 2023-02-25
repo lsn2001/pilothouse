@@ -60,6 +60,9 @@ export default defineConfig({
         light: "#e0e6ed",
         lightest: "#f9fafc",
       },
+      main: {
+        1: "#29BE8D",
+      },
     },
   },
 });

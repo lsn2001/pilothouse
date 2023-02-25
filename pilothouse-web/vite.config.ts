@@ -7,6 +7,8 @@ import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Unocss from "unocss/vite";
 import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
+
+import svgLoader from 'vite-svg-loader'
 export default defineConfig({
   server: {
     port: 5000,
@@ -31,7 +33,9 @@ export default defineConfig({
     Vue({
       reactivityTransform: true,
     }),
-
+    svgLoader({
+      svgo: false
+    }),
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: ["vue", "vue/macros", "vue-router", "@vueuse/core"],
@@ -44,6 +48,7 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
     Unocss(),
+    
   ],
 
   // https://github.com/vitest-dev/vitest
